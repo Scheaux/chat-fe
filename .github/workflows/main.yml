@@ -22,7 +22,7 @@ jobs:
 
       - run: npm run build
 
-      - run: npm lint
+      - run: npm run lint
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
