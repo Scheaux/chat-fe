@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: yarn
+      - run: npm
 
-      - run: yarn build
+      - run: npm run build
 
-      - run: yarn lint && yarn test
+      - run: npm lint
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
@@ -31,3 +31,5 @@ jobs:
           branch: gh-pages
           # The folder in your repository that you want to deploy. If your build script compiles into a directory named build you would put it here. Folder paths cannot have a leading / or ./. If you wish to deploy the root directory you can place a . here.
           folder: dist
+
+          token: ${{ secrets.TOKEN }}
