@@ -86,7 +86,7 @@ export default class App {
     setTimeout(async () => {
       const rawResponse = await fetch('https://corpchat-be.herokuapp.com/connections');
       const response = await rawResponse.json();
-      this.renderUserList(response);
+      if (response.length) this.renderUserList(response);
     }, 500);
     this.interval = setInterval(async () => {
       const rawResponse = await fetch('https://corpchat-be.herokuapp.com/connections');
